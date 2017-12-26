@@ -1,6 +1,6 @@
 set -e
 
-OUTDIR=gen
+OUTDIR=.
 
 find . | grep "$OUTDIR/GScript*.\(cs\|interp\|tokens\)" |  xargs rm
 

@@ -1,0 +1,17 @@
+T__0=1
+T__1=2
+T__2=3
+T__3=4
+T__4=5
+T__5=6
+T__6=7
+WORD=8
+WHITESPACE=9
+NEWLINE=10
+'Say'=1
+'Goto'=2
+'Pause'=3
+'Wait'=4
+'Label'=5
+'Ask'=6
+'React'=7
