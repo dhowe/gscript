@@ -95,13 +95,10 @@ public partial class GScriptParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_dialog; } }
-		public override void EnterRule(IParseTreeListener listener) {
-			IGScriptListener typedListener = listener as IGScriptListener;
-			if (typedListener != null) typedListener.EnterDialog(this);
-		}
-		public override void ExitRule(IParseTreeListener listener) {
-			IGScriptListener typedListener = listener as IGScriptListener;
-			if (typedListener != null) typedListener.ExitDialog(this);
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IGScriptVisitor<TResult> typedVisitor = visitor as IGScriptVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDialog(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -154,13 +151,10 @@ public partial class GScriptParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_line; } }
-		public override void EnterRule(IParseTreeListener listener) {
-			IGScriptListener typedListener = listener as IGScriptListener;
-			if (typedListener != null) typedListener.EnterLine(this);
-		}
-		public override void ExitRule(IParseTreeListener listener) {
-			IGScriptListener typedListener = listener as IGScriptListener;
-			if (typedListener != null) typedListener.ExitLine(this);
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IGScriptVisitor<TResult> typedVisitor = visitor as IGScriptVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitLine(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -194,13 +188,10 @@ public partial class GScriptParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_command; } }
-		public override void EnterRule(IParseTreeListener listener) {
-			IGScriptListener typedListener = listener as IGScriptListener;
-			if (typedListener != null) typedListener.EnterCommand(this);
-		}
-		public override void ExitRule(IParseTreeListener listener) {
-			IGScriptListener typedListener = listener as IGScriptListener;
-			if (typedListener != null) typedListener.ExitCommand(this);
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IGScriptVisitor<TResult> typedVisitor = visitor as IGScriptVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCommand(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -248,13 +239,10 @@ public partial class GScriptParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_text; } }
-		public override void EnterRule(IParseTreeListener listener) {
-			IGScriptListener typedListener = listener as IGScriptListener;
-			if (typedListener != null) typedListener.EnterText(this);
-		}
-		public override void ExitRule(IParseTreeListener listener) {
-			IGScriptListener typedListener = listener as IGScriptListener;
-			if (typedListener != null) typedListener.ExitText(this);
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IGScriptVisitor<TResult> typedVisitor = visitor as IGScriptVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitText(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
